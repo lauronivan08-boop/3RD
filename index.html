@@ -136,12 +136,13 @@
       if (container.children.length > 0) return;
 
       const count = 12;
-      for (let i = 0; i < count; i += 1) {
+      for (let i = 0; i < images.length; i++) {
         const image = document.createElement('div');
         image.className = 'floating-img';
+
         const img = document.createElement('img');
-        img.src = `../${images[i]}`;
-        img.alt = `Photo`;
+        img.src = images[i]; // FIXED
+        img.alt = 'photo';
         img.draggable = false;
         image.appendChild(img);
         const left = 6 + Math.random() * 84;
